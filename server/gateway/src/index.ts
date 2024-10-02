@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express';
 import 'dotenv/config';
 import logger from './utils/logger';
-import cors from 'cors'
+import cors from 'cors';
 import router from './routes';
 
 const app = express();
@@ -15,7 +15,7 @@ app.get('/v1/test', (req: Request, res: Response) => {
   res.send('Hello, world!');
 });
 
-app.use("/v1",router)
+app.use('/v1', router);
 
 app.listen(port, () => {
   logger.info(`Server listening on port ${port}`);

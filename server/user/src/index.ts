@@ -16,7 +16,7 @@ app.get('/v1/test', (req: Request, res: Response) => {
   res.send('Hello, world!');
 });
 
-app.use('/users',router)
+app.use('/users', router);
 
 sequelize
   .sync()

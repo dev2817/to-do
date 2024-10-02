@@ -17,7 +17,7 @@ export const createAxiosInstance = (baseURL: string): AxiosInstance => {
     },
     (error) => {
       return Promise.reject(error);
-    }
+    },
   );
 
   instance.interceptors.response.use(
@@ -25,9 +25,12 @@ export const createAxiosInstance = (baseURL: string): AxiosInstance => {
       return response;
     },
     (error) => {
-      logger.error('Error in response:', error.response ? error.response.data : error.message);
+      logger.error(
+        'Error in response:',
+        error.response ? error.response.data : error.message,
+      );
       return Promise.reject(error);
-    }
+    },
   );
 
   return instance;

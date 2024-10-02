@@ -9,15 +9,15 @@ const logFormat = printf(({ level, message, timestamp }) => {
 // Create logger instance
 const logger = createLogger({
   format: combine(
-    colorize(),  // Add colors to the log levels
+    colorize(), // Add colors to the log levels
     timestamp(), // Add timestamp to logs
-    logFormat
+    logFormat,
   ),
   transports: [
     new transports.Console(), // Log to console
     new transports.File({ filename: 'logs/error.log', level: 'error' }), // Log errors to file
-    new transports.File({ filename: 'logs/combined.log' }) // Log all messages to file
-  ]
+    new transports.File({ filename: 'logs/combined.log' }), // Log all messages to file
+  ],
 });
 
 // If in production, remove the console logger

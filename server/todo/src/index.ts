@@ -16,7 +16,7 @@ app.get('/test/todo', (req: Request, res: Response) => {
   res.send('Hello, world!');
 });
 
-app.use('/todo',router)
+app.use('/todo', router);
 
 sequelize
   .sync()
